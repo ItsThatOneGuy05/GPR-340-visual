@@ -12,22 +12,22 @@ Point2D Cat::Move(CatWorld* world) {
   //Dodge areas with many blocked tiles
 
   //Dijikstra
-  std::priority_queue<
-    std::pair<float, int>,
-    std::vector<std::pair<float, int>>,
-    std::greater<std::pair<float, int>>
-  > pq;
+  std::queue<Point2D> frontier;
 
-  std::unordered_map<int, std::pair<int, float>> cameFromMap;
+  frontier.push(pos);
 
   //pq.push();
 
-  std::pair<float, int> current;
-  while (!pq.empty())
+  Point2D current;
+  while (!frontier.empty())
   {
-    current = pq.top();
+    current = frontier.front();
+    frontier.pop();
 
-    for (std::pair<float, int> next : world->neighbors(current))
+    for (Point2D next : world->neighbors())
+    {
+      
+    }
   }
 
   /*switch (rand) {
